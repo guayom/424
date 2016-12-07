@@ -17,6 +17,14 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
+activate :dotenv, env: '.env'
+
+activate :contentful do |f|
+  f.space         = {contenidos: ENV['SPACE_ID']}
+  f.access_token  = ENV['CONTENT_DELIVERY_API']
+  #f.cda_query     = { content_type: 'releases',  content_type: 'conciertos'}
+  f.content_types = { releases: 'releases', conciertos: 'conciertos', redes: 'redes'}
+end
 
 # Reload the browser automatically whenever files change
 configure :development do

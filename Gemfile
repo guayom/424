@@ -13,3 +13,5 @@ gem 'middleman', '>= 3.3'
 gem 'middleman-livereload'
 
 gem "contentful_middleman"
+
+gem 'middleman-dotenv'
