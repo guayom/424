@@ -1,0 +1,16 @@
+<nav id="mainnav">
+  <h1>
+    424 - Costa Rica
+  </h1>
+  <ul>
+    <% data.contenidos.redes.each do |socialnetwork| %>
+      <li><a href="<%= socialnetwork[1].url %>" class="<%= socialnetwork[1].icon %>"><%= socialnetwork[1].titulo %></a></li>
+    <% end %>
+  </ul>
+  <ul id="website-sections">
+    <li><a href="#">Conciertos</a></li>
+    <li><a href="#">Discografía</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Booking</a></li>
+  </ul>
+</nav>
