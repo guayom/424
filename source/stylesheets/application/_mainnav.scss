@@ -22,15 +22,14 @@ $horizontal-bar-mode: $large-screen;
     height: $navigation-height;
     cursor: pointer;
 
+    width: 30%;
+
     @include media($mobile){
       display: block;
       float: left;
       width: 25%;
       padding-left: 15px;
       padding-right: 0px;
-    }
-    @include media($tablet){
-      width: 30%;
     }
   }
   h1{
