@@ -5,9 +5,12 @@
   background: $dark-gray;
   padding-top: 60px;
   box-sizing: border-box;
-  background-image: url(../images/background-spotify.jpg);
-  background-size: contain;
-  background-position: center;
+
+  background: url(../images/background-spotify.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   iframe{
     -webkit-box-shadow: 0 14px 24px 0 rgba(0,0,0, .30);
