@@ -20,14 +20,15 @@
     small{
       font-size: 0.8em;
     }
+    @include media($tablet){
+      right: 50%;
+    }
     @include media($mobile){
       width: 100%;
       top: 35%;
       right: 0;
       font-size: 2em;
-    }
-    @include media($tablet){
-      right: 50%;
+      text-align: center;
     }
   }
   .logo-melico{
@@ -58,11 +59,11 @@
     width: 100%;
     text-align: center;
     padding-bottom: 80px;
-    @include media($mobile){
-      padding-bottom: 120px;
-    }
     @include media($tablet){
       padding-bottom: 300px;
+    }
+    @include media($mobile){
+      padding-bottom: 120px;
     }
   }
   a{
