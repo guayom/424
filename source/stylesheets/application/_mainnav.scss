@@ -31,6 +31,9 @@ $horizontal-bar-mode: $large-screen;
       padding-left: 15px;
       padding-right: 0px;
     }
+    @include media ($iphone5){
+      width: 20%;
+    }
   }
   h1{
     @include hide-text;
