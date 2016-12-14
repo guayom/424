@@ -5,20 +5,12 @@
         424 - Costa Rica
       </h1>
     </a>
-    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <!-- <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a> -->
     <nav role="navigation">
       <ul id="social-networks-nav">
         <% data.contenidos.redes.each do |socialnetwork| %>
-          <li><a href="<%= socialnetwork[1].url %>" class="<%= socialnetwork[1].icon %>"><i class="fa fa-<%= socialnetwork[1].icon %>"></i></a></li>
+          <li><a href="<%= socialnetwork[1].url %>" class="<%= socialnetwork[1].icon %>" target="_blank"><i class="fa fa-<%= socialnetwork[1].icon %>"></i></a></li>
         <% end %>
-      </ul>
-    </nav>
-    <nav role="navigation">
-      <ul id="website-sections">
-        <li><a href="#">Conciertos</a></li>
-        <li><a href="#">Discografía</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="#">Booking</a></li>
       </ul>
     </nav>
   </div>

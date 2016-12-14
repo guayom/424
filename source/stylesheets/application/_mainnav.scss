@@ -21,6 +21,14 @@ $horizontal-bar-mode: $large-screen;
     box-sizing: border-box;
     height: $navigation-height;
     cursor: pointer;
+
+    @include media($mobile){
+      display: block;
+      float: left;
+      width: 25%;
+      padding-left: 15px;
+      padding-right: 0px;
+    }
   }
   h1{
     @include hide-text;
@@ -44,6 +52,9 @@ $horizontal-bar-mode: $large-screen;
   }
   li{
     display: inline-block;
+  }
+  @include media($mobile){
+    background: #001e23;
   }
 }
 #social-networks-nav{
