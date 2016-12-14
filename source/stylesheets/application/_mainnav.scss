@@ -29,6 +29,9 @@ $horizontal-bar-mode: $large-screen;
       padding-left: 15px;
       padding-right: 0px;
     }
+    @include media($tablet){
+      width: 30%;
+    }
   }
   h1{
     @include hide-text;
