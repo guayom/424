@@ -12,6 +12,10 @@
 
     <%= stylesheet_link_tag :site %>
     <%= javascript_include_tag :all %>
+
+    <% if build? %>
+      <%= partial "partials/googleanalytics" %>
+    <% end %>
   </head>
 
   <body class="<%= page_classes %>">
