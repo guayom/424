@@ -6,10 +6,6 @@ $navigation-color-hover: darken($navigation-color, 10%);
 $social-networks-background: lighten($dark-gray, 10%);
 $social-networks-background-hover: lighten($dark-gray, 20%);
 
-$navigation-height: 60px;
-$large-screen: 53.75em !default;
-$horizontal-bar-mode: $large-screen;
-
 .navigation-wrapper{
   background: $navigation-background;
   @include clearfix;
@@ -19,21 +15,8 @@ $horizontal-bar-mode: $large-screen;
     float: left;
     padding: 10px 10px 10px 2em;
     box-sizing: border-box;
-    height: $navigation-height;
     cursor: pointer;
-
     width: 30%;
-
-    @include media($mobile){
-      display: block;
-      float: left;
-      width: 25%;
-      padding-left: 15px;
-      padding-right: 0px;
-    }
-    @include media ($iphone5){
-      width: 20%;
-    }
   }
   h1{
     @include hide-text;
@@ -46,7 +29,6 @@ $horizontal-bar-mode: $large-screen;
   }
   a{
     color: $navigation-color;
-    line-height: $navigation-height;
     text-decoration: none;
   }
   ul{
@@ -57,9 +39,6 @@ $horizontal-bar-mode: $large-screen;
   }
   li{
     display: inline-block;
-  }
-  @include media($mobile){
-    background: #001e23;
   }
 }
 #social-networks-nav{
@@ -85,15 +64,10 @@ $horizontal-bar-mode: $large-screen;
     color: $navigation-color;
     display: block;
     float: right;
-    line-height: $navigation-height;
     margin: 0;
     padding-right: 1em;
     text-decoration: none;
     text-transform: uppercase;
-
-    @include media ($horizontal-bar-mode) {
-      display: none;
-    }
 
     &:focus,
     &:hover {

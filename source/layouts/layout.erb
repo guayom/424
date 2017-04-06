@@ -21,7 +21,16 @@
   </head>
 
   <body class="<%= page_classes %>">
-    <%= partial "partials/application/mainnav" %>
-    <%= yield %>
+    <div class="site-container">
+      <%= partial "partials/application/header" %>
+      <div class="site-inner">
+        <main class="content">
+          <%= yield %>
+        </main>
+      </div>
+      <aside class="sidebar">
+        <%= partial 'partials/application/sidebar' %>
+      </aside>
+    </div>
   </body>
 </html>
