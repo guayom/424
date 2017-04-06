@@ -1,76 +1,45 @@
-//navigation variables
-$navigation-background: $dark-gray;
-$navigation-background-hover: $dark-gray;
-$navigation-color: #fff;
-$navigation-color-hover: darken($navigation-color, 10%);
-$social-networks-background: lighten($dark-gray, 10%);
-$social-networks-background-hover: lighten($dark-gray, 20%);
+.site-header {
+  background: $header-background-color;
+  color: $header-text-color;
+  float: left;
+  height: 100%;
+  padding: 40px $header-side-padding 0 $header-side-padding;
+  position: fixed;
+  text-align: center;
+  width: $header-width;
+  z-index: z('site-header');
 
-.navigation-wrapper{
-  background: $navigation-background;
-  @include clearfix;
-  position: relative;
-  z-index: 9999;
-  .logo {
-    float: left;
-    padding: 10px 10px 10px 2em;
-    box-sizing: border-box;
-    cursor: pointer;
-    width: 30%;
-  }
-  h1{
-    @include hide-text;
+  h1 {
+    text-indent: 101%;
+    white-space: nowrap;
     display: block;
     background-image: url(../images/logo.svg);
-    background-repeat: no-repeat;
+    background-position: center center;
     background-size: contain;
-    margin: 0;
     height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    margin: 0 0 30px;
   }
-  a{
-    color: $navigation-color;
-    text-decoration: none;
-  }
-  ul{
+
+  ul {
     list-style: none;
-    display: inline-block;
     padding: 0;
     margin: 0;
   }
-  li{
-    display: inline-block;
-  }
-}
-#social-networks-nav{
-  background-color: $social-networks-background;
-  float: right;
-  padding: 0 7px 0 14px;
-  a{
-    padding: 0 7px;
-    &:hover{
-      color: $navigation-background;
-    }
-  }
-}
-#website-sections{
-  float: right;
-  margin-right: 20px;
-  a{
-    padding: 0 10px;
-  }
-}
 
-.navigation-menu-button {
-    color: $navigation-color;
-    display: block;
-    float: right;
-    margin: 0;
-    padding-right: 1em;
-    text-decoration: none;
-    text-transform: uppercase;
+  li {
+    font-size: 3em;
+    color: $header-text-color;
+    margin-bottom: 15px;
+  }
 
-    &:focus,
+  a {
+    color: $header-text-color;
+    cursor: pointer;
+
     &:hover {
-      color: $navigation-color-hover;
+      color: $header-text-hover-color;
     }
   }
+}

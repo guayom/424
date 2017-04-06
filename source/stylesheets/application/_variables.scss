@@ -1,2 +1,15 @@
 //colors
 $dark-gray: #111;
+$medium-gray: #999;
+$white: #fff;
+
+//header
+$header-background-color: $dark-gray;
+$header-text-color: $medium-gray;
+$header-text-hover-color: $white;
+$header-width: 140px;
+$header-side-padding: 15px;
+
+//main container
+$main-container-width: 1280px;
+$inner-container-width: calc (100% - $header-side-padding);
