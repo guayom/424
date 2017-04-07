@@ -1,0 +1,24 @@
+<section id="conciertos">
+  <h2>Próximos conciertos</h2>
+
+  <% data.contenidos.conciertos.each do |concierto| %>
+  <!-- Agregar condicional para que sólo se usen los conciertos que están en el futuro -->
+  <!-- Dar más formato -->
+    <div class="concierto">
+      <% I18n.locale = :es %>
+      <h3><%= I18n.localize(concierto[1].fecha, :format => "%e de %B %l%P")  %></h3>
+      <!-- Arreglar el título del concierto. Siempre agregar venue -->
+      <h4><%= concierto[1].titulo %></h4>
+      <!-- Meter arte -->
+      <!-- Parse markdown en descripción -->
+      <%= concierto[1].descripcion %>
+      <!-- meterle título y marker a la dirección -->
+      <!-- Agregar campo de se permiten menores de edad -->
+      <%= link_to ' Ver en Google Maps', "http://maps.google.com/?ie=UTF8&hq=&ll=#{concierto[1].location.map{|k,v| "#{v}"}.join(',')}" %>
+      <!-- Agregar link a waze -->
+      <!-- Agregar link a evento de facebook -->
+      <!-- Agregar botón de comprar entradas. Agregar campo en Contenful -->
+    </div>
+  <% end %>
+
+</section>
