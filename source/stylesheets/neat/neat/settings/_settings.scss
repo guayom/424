@@ -103,6 +103,12 @@ $desktop: (
     media: 1248px
   );
 
+$desktop-wide: (
+    columns: 12,
+    gutter: 20px,
+    media: 1440px
+  );
+
 //"phone":        400px,
 //"phone-wide":   480px,
 //"phablet":      560px,
