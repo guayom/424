@@ -4,8 +4,10 @@
 }
 
 .site-inner {
-  float: right;
-  width: $inner-container-width;
-  min-height: 200px;
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  min-height: 100vh;
   @include clearfix;
+  padding-left: $header-total-width;
 }
