@@ -1,13 +1,12 @@
 .site-container {
-  max-width: 1280px;
-  background: yellow;;
+  background: blue;
+  box-sizing: border-box;
 }
 
 .site-inner {
-  float: left;
-  width: 70%;
   box-sizing: border-box;
-  min-height: 100vh;
   @include clearfix;
-  padding-left: $header-total-width;
+  outline: 3px solid purple;
+  background:red;
+  padding: 40px;
 }

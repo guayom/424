@@ -72,3 +72,42 @@ $neat-grid: () !default;
 ///
 
 $neat-custom-grid: () !default;
+
+$phone: (
+    columns: 12,
+    gutter: 20px,
+    media: 400px
+  );
+
+$phablet: (
+    columns: 12,
+    gutter: 20px,
+    media: 1024px
+  );
+
+$tablet-regular: (
+    columns: 12,
+    gutter: 20px,
+    media: 768px
+  );
+
+$tablet-wide: (
+    columns: 12,
+    gutter: 20px,
+    media: 1024px
+  );
+
+$desktop: (
+    columns: 12,
+    gutter: 20px,
+    media: 1248px
+  );
+
+//"phone":        400px,
+//"phone-wide":   480px,
+//"phablet":      560px,
+//"tablet-small": 640px,
+//"tablet":       768px,
+//"tablet-wide":  1024px,
+//"desktop":      1248px,
+//"desktop-wide": 1440px

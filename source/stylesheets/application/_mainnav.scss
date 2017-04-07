@@ -1,37 +1,30 @@
 .site-header {
   background: $header-background-color;
   color: $header-text-color;
-  float: left;
-  height: 100%;
-  padding: 40px $header-side-padding 0 $header-side-padding;
-  position: fixed;
   text-align: center;
-  width: $header-width;
   z-index: z('site-header');
+  padding: 20px 0;
 
   h1 {
     text-indent: 101%;
     white-space: nowrap;
-    display: block;
     background-image: url(../images/logo.svg);
-    background-position: center center;
     background-size: contain;
     height: 100%;
     overflow: hidden;
     background-repeat: no-repeat;
-    margin: 0 0 30px;
   }
 
   ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    text-align: center;
   }
 
   li {
-    font-size: 3em;
+    font-size: 1.8em;
     color: $header-text-color;
-    margin-bottom: 15px;
+    display: inline-block;
+    margin: 0 10px;
   }
 
   a {
@@ -40,6 +33,14 @@
 
     &:hover {
       color: $header-text-hover-color;
+    }
+  }
+
+  @include grid-media($desktop) {
+    li {
+      display: block;
+      font-size: 3em;
+      margin: 0 0 15px;
     }
   }
 }
