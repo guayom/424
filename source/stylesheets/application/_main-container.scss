@@ -1,12 +1,9 @@
 .site-container {
-  background: blue;
   box-sizing: border-box;
 }
 
 .site-inner {
   box-sizing: border-box;
   @include clearfix;
-  outline: 3px solid purple;
-  background:red;
   padding: 40px;
 }
