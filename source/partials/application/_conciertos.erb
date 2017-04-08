@@ -12,7 +12,7 @@
         <div class="venue"><%= concierto[1].venue %></div>
         <div class="location"><%= concierto[1].ciudad %>, <%= concierto[1].pais %></div>
         <div class="botones">
-          <%= link_to 'Comprar Entradas', concierto[1].comprarEntradas, :class => 'button comprarEntradas', :target => "_blank", :onclick => 'clickComprarEntradas(this)', :"data-concierto" => concierto[1].titulo  %>
+          <%= link_to 'Comprar Entradas', concierto[1].comprarEntradas, :class => 'button comprarEntradas', :target => "_blank", :onClick => "ga('send', 'event', 'clicks', 'comprar Entradas', '#{concierto[1].titulo}');"  %>
           <a href="javascript:void(0)" class="ver-detalles-button" data-target="concierto-<%= i %>"> detalles</a>
         </div>
       </div>
