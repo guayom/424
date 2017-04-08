@@ -1,10 +1,26 @@
 ---
 :id: 258Qb4UMlOi4YOk8CMYAoY
-:titulo: Historias del mar
+:titulo: Historias del mar, en el Teatro Espressivo
 :fecha: !ruby/object:DateTime 2017-04-27 20:00:00.000000000 -06:00
+:venue: Teatro Espressivo
+:ciudad: Tres ríos
+:pais: Costa Rica
+:direccion: |-
+  Carretera vieja a Tres Ríos, Curridabat.
+  Centro Comercial Momentum Pinares, segundo piso.
 :location:
   :lat: 9.9107203
   :lon: -84.01801490000003
-:descripcion: |-
-  Les damos concierto y les contamos historias de nuestras canciones. Un show íntimo en el Teatro Espressivo.
-  Entradas a la venta en [boleteria.espressivo.cr](http://boleteria.espressivo.cr "Boletería Teatro Espressivo")
+:descripcion: "Un concierto íntimo en el que 424 compartirá las historias detrás de
+  las canciones de su más reciente producción discográfica “Siempre Mar”. \n\n“Música
+  en Tiempo Espressivo” es un proyecto del Teatro Espressivo que tiene como objetivo
+  acercar al público del teatro a las diversas manifestaciones musicales que existen
+  en Costa Rica. Durante el 2017 habrá conciertos con grupos como Swing en 4, Percance,
+  Son de Tikizia, Gaviota y muchos más. "
+:comprarEntradas: http://boleteria.espressivo.cr
+:facebookEvent: https://www.facebook.com/events/1907563252855334/
+:flyer:
+  :title: Historias del mar
+  :description: 
+  :url: "//images.contentful.com/ivvukpavj6tb/16h9tsuERygi6wwuOmIGyg/8bca2cedeab4b6cc2c2bed71671a29db/17800304_1297228590366801_7358626156881338417_n.jpg"
+:menoresDeEdad: true

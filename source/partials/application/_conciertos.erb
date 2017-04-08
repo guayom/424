@@ -1,24 +1,38 @@
 <section id="conciertos">
   <h2>Próximos conciertos</h2>
-
-  <% data.contenidos.conciertos.each do |concierto| %>
   <!-- Agregar condicional para que sólo se usen los conciertos que están en el futuro -->
-  <!-- Dar más formato -->
+  <% data.contenidos.conciertos.each do |concierto| %>
     <div class="concierto">
-      <% I18n.locale = :es %>
-      <h3><%= I18n.localize(concierto[1].fecha, :format => "%e de %B %l%P")  %></h3>
-      <!-- Arreglar el título del concierto. Siempre agregar venue -->
-      <h4><%= concierto[1].titulo %></h4>
-      <!-- Meter arte -->
-      <!-- Parse markdown en descripción -->
-      <%= concierto[1].descripcion %>
-      <!-- meterle título y marker a la dirección -->
-      <!-- Agregar campo de se permiten menores de edad -->
-      <%= link_to ' Ver en Google Maps', "http://maps.google.com/?ie=UTF8&hq=&ll=#{concierto[1].location.map{|k,v| "#{v}"}.join(',')}" %>
-      <!-- Agregar link a waze -->
-      <!-- Agregar link a evento de facebook -->
-      <!-- Agregar botón de comprar entradas. Agregar campo en Contenful -->
+
+      <div class="daterow">
+        <div class="date"><%= I18n.localize(concierto[1].fecha, :format => "%e de %B %l%P")  %></div>
+        <div class="venue"><%= concierto[1].venue %></div>
+        <div class="city"><%= concierto[1].ciudad %></div>
+        <div class="country"><%= concierto[1].pais %></div>
+        <div class="tickets"><%= link_to 'Comprar Entradas', concierto[1].comprarEntradas, :class => 'button comprarEntradas', :target => "_blank" %></div>
+        <div class="verDetalles"><a href="#">Ver detalles</a></div>
+      </div>
+
+      <div class="detalles">
+        <img src="<%= "#{concierto[1].flyer.url}?w=250" %>" alt="<%= concierto[1].flyer.title %>" class="flyer" />
+
+        <% I18n.locale = :es %>
+        <h3><%= I18n.localize(concierto[1].fecha, :format => "%e de %B %l%P")  %></h3>
+        <h4><%= concierto[1].titulo %></h4>
+        <%= simple_format(concierto[1].descripcion) %>
+
+        <%= "<strong>Se admiten menores de edad</strong>".html_safe if concierto[1].menoresDeEdad == true %>
+
+        <!-- meterle título y marker a la dirección. Mejorar los links de location un poco -->
+        Dirección: <%= concierto[1].direccion %>
+        <%= link_to 'Ver en Google Maps', "http://maps.google.com/?ie=UTF8&hq=&ll=#{concierto[1].location.map{|k,v| "#{v}"}.join(',')}", :target => "_blank", :class => "googlemaps" %>
+        <%= link_to 'Abrir en Waze', "waze://?ll=#{concierto[1].location.map{|k,v| "#{v}"}.join(',')}", :target => "_blank", :class => "waze" %>
+
+        <%= link_to 'Comprar Entradas', concierto[1].comprarEntradas, :class => 'button comprarEntradas', :target => "_blank" %>
+
+        <%= link_to "Evento en Facebook", concierto[1].facebookEvent, :class => 'facebookEvent', :target => "_blank" %>
+      </div>
+
     </div>
   <% end %>
-
 </section>
