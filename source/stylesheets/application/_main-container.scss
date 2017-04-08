@@ -4,10 +4,13 @@
 
 .site-inner {
   box-sizing: border-box;
+  padding: 2em;
 }
 
 .content {
   h2 {
-
+    border: solid 3px $title-color;
+    padding: 0.5em 1em;
+    display: inline-block;
   }
 }
