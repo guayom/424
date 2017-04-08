@@ -30,6 +30,7 @@
   a {
     color: $header-text-color;
     cursor: pointer;
+    transition: color 0.8s ease;
 
     &:hover {
       color: $header-text-hover-color;
