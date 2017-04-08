@@ -13,11 +13,9 @@
         <div class="location"><%= concierto[1].ciudad %>, <%= concierto[1].pais %></div>
         <div class="botones">
           <%= link_to 'Comprar Entradas', concierto[1].comprarEntradas, :class => 'button comprarEntradas', :target => "_blank" %>
+          <a href="javascript:void(0)" class="ver-detalles-button" data-target="concierto-<%= i %>"> detalles</a>
         </div>
       </div>
-
-      <label for="showblock">Ver detalles</label>
-      <input type="checkbox" id="showblock" />
 
       <div class="detalles" id="concierto-<%= i %>">
         <%= simple_format(concierto[1].descripcion) %>

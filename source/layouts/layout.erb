@@ -13,6 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <%= stylesheet_link_tag :site %>
+
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
     <%= javascript_include_tag :all %>
 
     <% if build? %>
@@ -33,4 +38,10 @@
       </aside>
     </div>
   </body>
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <%= javascript_include_tag :all %>
 </html>
