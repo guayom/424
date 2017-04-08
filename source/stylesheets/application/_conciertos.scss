@@ -1,9 +1,13 @@
 .concierto {
   background: rgba(255,255,255,0.2);
-  padding: 2em;
+  padding: 2em 2em 0;
   color: #fff;
   font-weight: 300;
   position: relative;
+
+  @include grid-media($tablet-wide) {
+    padding: 2em;
+  }
 
   .venue {
     font-size: 1.8em;
@@ -15,12 +19,8 @@
   }
 
   .botones{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: auto;
     padding: 2em;
+    margin: 20px -2em 0;
     text-align: center;
     background: rgba(255,255,255,0.8);
     //background: $paleta1;
@@ -29,12 +29,24 @@
     .detalles-button {
       color: $button-color;
     }
+
+    @include grid-media($tablet-wide) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: auto;
+      margin: 0;
+    }
   }
 
   .button {
     display: block;
     //margin-bottom: 20px;
-    margin-top: 12px;
+
+    @include grid-media($tablet-wide) {
+      margin-top: 12px;
+    }
   }
 
 }

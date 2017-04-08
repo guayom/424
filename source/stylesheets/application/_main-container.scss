@@ -5,6 +5,10 @@
 .site-inner {
   box-sizing: border-box;
   padding: 1em 3em;
+
+  @include grid-media($tablet-regular) {
+    padding: 1em 0 1em 3em;
+  }
 }
 
 .content {
