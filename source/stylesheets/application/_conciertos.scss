@@ -1,29 +1,80 @@
 .concierto {
-  background: rgba(255,255,255,0.2);
-  padding: 2em 2em 0;
   color: #fff;
   font-weight: 300;
   position: relative;
-
-  @include grid-media($tablet-wide) {
-    padding: 2em;
-  }
 
   .venue {
     font-size: 1.8em;
     font-weight: 400;
   }
 
-  .detalles {
+  .daterow {
+    position: relative;
+    padding: 2em 2em 0;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0.22), rgba(255,255,255,0.8)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(255,255,255,0.22), rgba(255,255,255,0.8)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(255,255,255,0.22), rgba(255,255,255,0.8)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(255,255,255,0.22), rgba(255,255,255,0.8));
+    @include grid-media($tablet-wide) {
+      padding: 2em;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    position: absolute;
+    right: 2em;
+    top: 6em;
+    display: inline-block;
+    text-align: center;
+    width: 11em;
+    color: $button-color;
+  }
+
+  #showblock {
     display: none;
+  }
+
+  #showblock:checked + .detalles {
+    height: 400px;
+  }
+
+  .detalles {
+    background:rgba(255,255,255,0.8);
+    color: #555;
+    margin-top:2px;
+    box-sizing: border-box;
+    padding: 0 2em;
+
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 300ms linear;
+    -moz-transition: height 300ms linear;
+    -o-transition: height 300ms linear;
+    transition: height 300ms linear;
+
+    a {
+      color: $button-color;
+      display: inline-block;
+      text-align: left;
+      margin: 5px 10px 5px 0;
+      cursor: pointer;
+    }
+
+    a:first-of-type {
+      margin-top: 20px;
+    }
+
+    strong {
+      color: $button-color;
+      font-weight: bold;
+    }
   }
 
   .botones{
     padding: 2em;
-    margin: 20px -2em 0;
+    margin: 0 -2em 0;
     text-align: center;
-    background: rgba(255,255,255,0.8);
-    //background: $paleta1;
     box-sizing: border-box;
 
     .detalles-button {
@@ -42,10 +93,9 @@
 
   .button {
     display: block;
-    //margin-bottom: 20px;
 
     @include grid-media($tablet-wide) {
-      margin-top: 12px;
+      margin-bottom: 12px;
     }
   }
 
