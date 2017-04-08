@@ -1,0 +1,15 @@
+.button {
+  border: solid 3px $button-color;
+  padding: 0.7em 1em;
+  color: $button-color;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background: $button-color;
+    color: #fff;
+  }
+}

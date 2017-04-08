@@ -5,12 +5,16 @@
     <div class="concierto">
 
       <div class="daterow">
-        <div class="date"><%= I18n.localize(concierto[1].fecha, :format => "%e de %B %l%P")  %></div>
+        <div class="date">
+          <% I18n.locale = :es %>
+          <%= I18n.localize(concierto[1].fecha, :format => "%e de %B")  %>
+        </div>
         <div class="venue"><%= concierto[1].venue %></div>
-        <div class="city"><%= concierto[1].ciudad %></div>
-        <div class="country"><%= concierto[1].pais %></div>
-        <div class="tickets"><%= link_to 'Comprar Entradas', concierto[1].comprarEntradas, :class => 'button comprarEntradas', :target => "_blank" %></div>
-        <div class="verDetalles"><a href="#">Ver detalles</a></div>
+        <div class="location"><%= concierto[1].ciudad %>, <%= concierto[1].pais %></div>
+        <div class="botones">
+          <%= link_to 'Comprar Entradas', concierto[1].comprarEntradas, :class => 'button comprarEntradas', :target => "_blank" %>
+          <!-- <a href="#" class="detalles-button">Ver detalles</a> -->
+        </div>
       </div>
 
       <div class="detalles">

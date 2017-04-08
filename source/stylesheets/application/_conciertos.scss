@@ -1,5 +1,40 @@
 .concierto {
+  background: rgba(255,255,255,0.2);
+  padding: 2em;
+  color: #fff;
+  font-weight: 300;
+  position: relative;
+
+  .venue {
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+
   .detalles {
     display: none;
   }
+
+  .botones{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    padding: 2em;
+    text-align: center;
+    background: rgba(255,255,255,0.8);
+    //background: $paleta1;
+    box-sizing: border-box;
+
+    .detalles-button {
+      color: $button-color;
+    }
+  }
+
+  .button {
+    display: block;
+    //margin-bottom: 20px;
+    margin-top: 12px;
+  }
+
 }
