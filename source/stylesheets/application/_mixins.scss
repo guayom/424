@@ -6,6 +6,7 @@
         @return null;
     }
 }
+
 $z-indexes: (
     "outdated-browser",
     "modal",
@@ -13,3 +14,9 @@ $z-indexes: (
     "page-wrapper",
     "site-footer"
 );
+
+@mixin gradient($background, $direction, $color1, $color2) {
+  background: $background;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to $direction, $color1, $color2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to $direction, $color1, $color2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
