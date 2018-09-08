@@ -2,6 +2,7 @@ import React from 'react'
 import { ProductsGrid } from '../components/grids'
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import Link from 'gatsby-link';
 
 const Product = styled.div`
   margin-bottom: ${props => props.theme.spacing.base}px;
@@ -30,11 +31,16 @@ const Tienda = ({data}) => {
         {Products.map(product => (
           <Product key={product.id}>
             <ImageContainer>
-              <Img sizes={product.cover.sizes} alt={product.title} />
+              <Link to={`/tienda/${product.slug}`}>
+                <Img sizes={product.cover.sizes} alt={product.title} />
+              </Link>
             </ImageContainer>
             <div>
               <Title>{product.title}</Title>
               <Price>${product.price}</Price>
+              <Link to={`/tienda/${product.slug}`}>
+                Ver detalles
+              </Link>
             </div>
           </Product>
         ))}
@@ -51,6 +57,7 @@ export const query = graphql`
         node {
           id
           title
+          slug
           description {
             description
           }
