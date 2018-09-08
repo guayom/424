@@ -18,7 +18,7 @@ const Layout = ({ children, data }) => (
     <div>
       {children()}
     </div>
-    <Social />
+    <Social networks={data.allContentfulRedes.edges.map(r => r.node)}/>
   </div>
 )
 
@@ -33,6 +33,16 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulRedes {
+      edges {
+        node {
+          id
+          titulo
+          url
+          icon
+        }
       }
     }
   }
