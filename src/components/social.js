@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { FaInstagram, FaFacebook, FaTwitter, FaSpotify, FaYoutube, FaApple, FaSoundcloud } from 'react-icons/fa';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const Icons = {
   instagram: FaInstagram,
@@ -73,7 +74,9 @@ export default ({networks}) =>
     <ul>
       {networks.map(network => (
         <li key={network.id}>
-          <a href={network.url} rel="noopener noreferrer" target="_blank">{getIcon(network.icon)}</a>
+          <OutboundLink href={network.url} rel="noopener noreferrer" target="_blank">
+            {getIcon(network.icon)}
+          </OutboundLink>
         </li>
       ))}
     </ul>
