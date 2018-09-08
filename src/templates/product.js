@@ -25,6 +25,17 @@ export default ({data}) => {
       <Details>
         <h1>{product.title}</h1>
         <p>${product.price}</p>
+        <a
+          href='#'
+          className='snipcart-add-item'
+          data-item-id={product.id}
+          data-item-price={product.price}
+          data-item-image={product.image}
+          data-item-name={product.title}
+          data-item-description={product.description.description}
+          data-item-url={"https://develop--424.netlify.com/tienda/" + product.slug}>
+          Buy
+        </a>
       </Details>
       <Description>
         <div dangerouslySetInnerHTML={{ __html: product.description.childMarkdownRemark.html }} />
