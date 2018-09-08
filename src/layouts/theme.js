@@ -7,6 +7,7 @@ const Theme = {
     red: "#f00",
     black: "#222",
     white: "#fff",
+    main: "#000",
   },
   sizes: {
     header: 50,

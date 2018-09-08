@@ -1,8 +1,9 @@
 import React from 'react';
+import { PrimaryButton } from '../components/buttons';
 
 export default ({ id, price, image, name, description, slug}) => (
-  <a
-    href='#'
+  <PrimaryButton
+    to='#'
     className='snipcart-add-item'
     data-item-id={id}
     data-item-price={price}
@@ -10,6 +11,6 @@ export default ({ id, price, image, name, description, slug}) => (
     data-item-name={name}
     data-item-description={description}
     data-item-url={"https://develop--424.netlify.com/tienda/" + slug}>
-    Buy
-  </a>
+    Comprar
+  </PrimaryButton>
 )
