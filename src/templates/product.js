@@ -30,7 +30,7 @@ export default ({data}) => {
           className='snipcart-add-item'
           data-item-id={product.id}
           data-item-price={product.price}
-          data-item-image={product.image}
+          data-item-image={product.cover.file.url}
           data-item-name={product.title}
           data-item-description={product.description.description}
           data-item-url={"https://develop--424.netlify.com/tienda/" + product.slug}>
@@ -51,6 +51,9 @@ export const productQuery = graphql`
       price
       slug
       cover {
+        file {
+          url
+        }
         sizes(quality: 80){
           base64
           aspectRatio
