@@ -1,22 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
-import { FaInstagram, FaFacebook, FaTwitter, FaSpotify, FaYoutube, FaApple, FaSoundcloud } from 'react-icons/fa';
+import { Icon } from 'react-icons-kit'
+import { facebook } from 'react-icons-kit/fa/facebook';
+import { twitter } from 'react-icons-kit/fa/twitter';
+import { instagram } from 'react-icons-kit/fa/instagram';
+import { youtube } from 'react-icons-kit/fa/youtube';
+import { spotify } from 'react-icons-kit/fa/spotify';
+import { apple } from 'react-icons-kit/fa/apple';
+import { soundcloud } from 'react-icons-kit/fa/soundcloud';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const Icons = {
-  instagram: FaInstagram,
-  facebook: FaFacebook,
-  twitter: FaTwitter,
-  spotify: FaSpotify,
-  youtube: FaYoutube,
-  apple: FaApple,
-  soundcloud: FaSoundcloud,
+  instagram: instagram,
+  facebook: facebook,
+  twitter: twitter,
+  spotify: spotify,
+  youtube: youtube,
+  apple: apple,
+  soundcloud: soundcloud,
 }
 
 function getIcon(network) {
   const NetworkIcon = Icons[network];
-  return <NetworkIcon />
+  return <Icon icon={NetworkIcon} />
 }
 
 const Nav = styled.div`
