@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import Logo from '../images/logo.svg'
 
 const Container = styled.div`
@@ -18,6 +19,9 @@ const Container = styled.div`
 
   img {
     height: 50px;
+    ${breakpoint('tablet')`
+      height: 80px;
+    `}
   }
 `
 

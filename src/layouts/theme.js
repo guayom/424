@@ -58,6 +58,16 @@ injectGlobal`
   iframe {
     max-width: 100%;
   }
+
+  @media screen and (min-width: 737px) {
+    body {
+      background-color: blue;
+      padding-left: ${Theme.spacing.base * 2.5}px;
+      background: url(https://images.ctfassets.net/ivvukpavj6tb/2QgT6LjZu0oQYYo8usG4gA/6ffa1341cafa3e1196e20a21608334b3/background1.jpg?w=2000);
+      padding-bottom: 0;
+      min-height: 100vh;
+    }
+  }
 `
 
 const DefaultTheme = (props) => (
