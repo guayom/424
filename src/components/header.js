@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Logo from '../images/logo.svg'
+import Nav from './nav'
 //import ReactSVG from 'react-svg';
 
 const Container = styled.div`
@@ -32,6 +33,7 @@ const Header = ({ siteTitle }) => (
         <img src={Logo} alt="424" />
       </Link>
     </h1>
+    <Nav/>
   </Container>
 )
 
