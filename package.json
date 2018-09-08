@@ -13,6 +13,7 @@
     "i": "^0.3.6",
     "npm": "^6.4.1",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.0.5",
     "react-spotify-player": "^1.0.4",
     "styled-components": "^3.4.5",
     "styled-components-breakpoint": "^2.1.0"
