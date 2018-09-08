@@ -36,24 +36,9 @@ const Nav = styled.div`
   color: ${props => props.theme.colors.white};
   padding: ${props => props.theme.spacing.base / 2}px ${props => props.theme.spacing.base}px;
 
-  ${breakpoint('tablet')`
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: initial;
-    height: 100vh;
-    padding: ${props => props.theme.spacing.base}px ${props => props.theme.spacing.base / 1.5}px;
-  `}
-
   a {
     color: ${props => props.theme.colors.white};
     font-size: 20px;
-
-    ${breakpoint('tablet')`
-      display: block;
-      font-size: 30px;
-      margin-bottom: ${props => props.theme.spacing.base}px;
-    `}
   }
 
   ul {
@@ -63,21 +48,31 @@ const Nav = styled.div`
     padding: 0;
 
     ${breakpoint('tablet')`
-      display: block;
+      float: left;
     `}
   }
 
   li {
     text-align: center;
-
     ${breakpoint('tablet')`
-      display: block;
+      margin-right: ${props => props.theme.spacing.base / 2 }px;
     `}
   }
 `
 
+const Title = styled.span`
+  display: none;
+
+  ${breakpoint('tablet')`
+    display: inline-block;
+    float: left;
+    margin-right: ${props => props.theme.spacing.base / 2 }px;
+  `}
+`
+
 export default ({networks}) =>
   <Nav count={networks.length}>
+    <Title>Seguínos en:</Title>
     <ul>
       {networks.map(network => (
         <li key={network.id}>

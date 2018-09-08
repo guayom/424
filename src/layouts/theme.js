@@ -58,14 +58,6 @@ injectGlobal`
   iframe {
     max-width: 100%;
   }
-
-  @media screen and (min-width: 737px) {
-    body {
-      padding-left: ${Theme.spacing.base * 2.5}px;
-      padding-bottom: 0;
-      min-height: 100vh;
-    }
-  }
 `
 
 const DefaultTheme = (props) => (
