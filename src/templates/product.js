@@ -1,7 +1,8 @@
-import React from 'react'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import Buy from '../components/buyButton';
 
 const ProductDetailGrid = styled.div`
 `
@@ -25,17 +26,14 @@ export default ({data}) => {
       <Details>
         <h1>{product.title}</h1>
         <p>${product.price}</p>
-        <a
-          href='#'
-          className='snipcart-add-item'
-          data-item-id={product.id}
-          data-item-price={product.price}
-          data-item-image={product.cover.file.url}
-          data-item-name={product.title}
-          data-item-description={product.description.description}
-          data-item-url={"https://develop--424.netlify.com/tienda/" + product.slug}>
-          Buy
-        </a>
+        <Buy
+          id={product.id}
+          price={product.price}
+          image={product.cover.file.url}
+          name={product.title}
+          description={product.description.description}
+          slug={product.slug}
+          />
       </Details>
       <Description>
         <div dangerouslySetInnerHTML={{ __html: product.description.childMarkdownRemark.html }} />

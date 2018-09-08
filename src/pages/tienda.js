@@ -3,6 +3,7 @@ import { ProductsGrid } from '../components/grids'
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import Buy from '../components/buyButton';
 
 const Product = styled.div`
   margin-bottom: ${props => props.theme.spacing.base}px;
@@ -41,6 +42,15 @@ const Tienda = ({data}) => {
               <Link to={`/tienda/${product.slug}`}>
                 Ver detalles
               </Link>
+              <br/>
+              <Buy
+                id={product.id}
+                price={product.price}
+                image={product.cover.file.url}
+                name={product.title}
+                description={product.description.description}
+                slug={product.slug}
+                />
             </div>
           </Product>
         ))}
@@ -63,6 +73,9 @@ export const query = graphql`
           }
           price
           cover {
+            file {
+              url
+            }
             sizes {
               src
               base64
