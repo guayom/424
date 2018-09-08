@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import {ThemeProvider} from 'styled-components';
+import DefaultTheme from '../layouts/theme';
+import { MainGrid } from '../components/grids';
+import { MainWrapper } from '../components/wrappers';
 
 import Header from '../components/header'
 import Social from '../components/social'
 
 const Layout = ({ children, data }) => (
+  
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -14,11 +19,15 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div>
-      {children()}
-    </div>
-    <Social networks={data.allContentfulRedes.edges.map(r => r.node)}/>
+    <DefaultTheme>
+      <MainGrid>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <MainWrapper>
+          {children()}
+        </MainWrapper>
+        <Social networks={data.allContentfulRedes.edges.map(r => r.node)} />
+      </MainGrid>
+    </DefaultTheme>
   </div>
 )
 
