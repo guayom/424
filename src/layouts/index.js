@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import {ThemeProvider} from 'styled-components';
 import DefaultTheme from '../layouts/theme';
 import { MainGrid } from '../components/grids';
 import { MainWrapper } from '../components/wrappers';

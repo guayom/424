@@ -6,4 +6,8 @@ const MainWrapper = styled.div`
   padding: ${props => props.theme.spacing.base}px;
 `
 
+const WhiteWrapper = styled.div`
+  background: #fff;
+`
+
 export default { MainWrapper }

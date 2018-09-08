@@ -5,7 +5,7 @@ import breakpoint from 'styled-components-breakpoint';
 import Logo from '../images/logo.svg'
 
 const Container = styled.div`
-  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.black};
   padding: ${props => props.theme.spacing.base}px;
   height: auto;
 

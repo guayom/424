@@ -34,7 +34,6 @@ injectGlobal`
     padding-bottom: ${Theme.sizes.social}px;
     min-height: calc(100% - ${Theme.sizes.social}px);
     margin: 0;
-    background: url(https://images.ctfassets.net/ivvukpavj6tb/2QgT6LjZu0oQYYo8usG4gA/6ffa1341cafa3e1196e20a21608334b3/background1.jpg?w=414&h=736&fit=fill);
   }
   body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     font-weight: normal;
@@ -61,9 +60,7 @@ injectGlobal`
 
   @media screen and (min-width: 737px) {
     body {
-      background-color: blue;
       padding-left: ${Theme.spacing.base * 2.5}px;
-      background: url(https://images.ctfassets.net/ivvukpavj6tb/2QgT6LjZu0oQYYo8usG4gA/6ffa1341cafa3e1196e20a21608334b3/background1.jpg?w=2000);
       padding-bottom: 0;
       min-height: 100vh;
     }

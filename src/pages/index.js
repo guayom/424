@@ -4,6 +4,7 @@ import Spotify from '../components/spotify'
 
 const Index = () => (
   <div>
+    <Link to="/tienda">Tienda</Link>
     <Spotify />
   </div>
 )

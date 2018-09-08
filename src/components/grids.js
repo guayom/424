@@ -6,4 +6,12 @@ const MainGrid = styled.div`
 
 `
 
-export default { MainGrid }
+const ProductsGrid = styled.div`
+  ${breakpoint('tablet')`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: ${props => props.theme.spacing.base}px;
+  `}
+`
+
+export default { MainGrid, ProductsGrid }
