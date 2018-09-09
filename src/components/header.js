@@ -59,7 +59,10 @@ const Container = styled.div`
     border-top: solid 1px;
     color: #fff;
     transition: opacity .5s;
-    opacity: ${props => props.scrolled ? "0" : "1"};
+
+    ${breakpoint('tablet')`
+      opacity: ${props => props.scrolled ? "0" : "1"};
+    `}
   }
 
   .scrolled {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import DefaultTheme from '../layouts/theme';
 import { MainGrid } from '../components/grids';
-import { MainWrapper } from '../components/wrappers';
 
 import Header from '../components/header'
 import Social from '../components/social'
@@ -21,9 +20,7 @@ const Layout = ({ children, data }) => (
     <DefaultTheme>
       <MainGrid>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <MainWrapper>
-          {children()}
-        </MainWrapper>
+        {children()}
         <Social networks={data.allContentfulRedes.edges.map(r => r.node)} />
       </MainGrid>
     </DefaultTheme>
