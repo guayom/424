@@ -25,7 +25,7 @@ const NavItem = styled.li`
   `};
 
   .active {
-    color: ${props => props.theme.colors.main};
+    border-bottom: 1px solid;
   }
 `
 
