@@ -54,12 +54,17 @@ const Container = styled.div`
     content: "";
     position: absolute;
     bottom: 0px;
-    left: 10%;
-    width: 80%;
+    left: ${props => props.theme.spacing.base}px;
+    width: calc(100% - ${props => props.theme.spacing.base * 2}px);
     border-top: solid 1px;
     color: #fff;
     transition: opacity .5s;
     opacity: ${props => props.scrolled ? "0" : "1"};
+
+    ${breakpoint('tablet')`
+      width: 80%;
+      left: 10%;
+    `}
   }
 
   .scrolled {
