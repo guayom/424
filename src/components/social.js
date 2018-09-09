@@ -35,6 +35,17 @@ const Nav = styled.div`
   background: ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.white};
   padding: ${props => props.theme.spacing.base / 2}px ${props => props.theme.spacing.base}px;
+  z-index: 99;
+
+  ${breakpoint('tablet')`
+    top: 0;
+    left: auto;
+    right: 10%;
+    bottom: auto;
+    background: transparent;
+    padding: 0;
+    height: 122px;
+  `}
 
   a {
     color: ${props => props.theme.colors.white};
@@ -46,33 +57,20 @@ const Nav = styled.div`
     grid-template-columns: repeat(${props => props.count}, 1fr);
     margin: 0;
     padding: 0;
-
-    ${breakpoint('tablet')`
-      float: left;
-    `}
+    height: 100%;
+    align-items: center;
   }
 
   li {
-    text-align: center;
+    text-align: right;
     ${breakpoint('tablet')`
-      margin-right: ${props => props.theme.spacing.base / 2 }px;
+      margin-left: ${props => props.theme.spacing.base / 2 }px;
     `}
   }
-`
-
-const Title = styled.span`
-  display: none;
-
-  ${breakpoint('tablet')`
-    display: inline-block;
-    float: left;
-    margin-right: ${props => props.theme.spacing.base / 2 }px;
-  `}
 `
 
 export default ({networks}) =>
   <Nav count={networks.length}>
-    <Title>Seguínos en:</Title>
     <ul>
       {networks.map(network => (
         <li key={network.id}>

@@ -11,6 +11,20 @@ const Container = styled.div`
   height: auto;
   text-align: center;
   position: relative;
+  z-index: 99;
+  
+  ${breakpoint('tablet')`
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: ${props => props.theme.spacing.base}px;
+    text-align: left;
+    margin: 0 auto;
+    padding: ${props => props.theme.spacing.base}px 10%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  `}
 
   a {
     color: ${props => props.theme.colors.white};
@@ -20,10 +34,17 @@ const Container = styled.div`
     display: block;
     text-align: center;
     margin: 0 auto;
+
+    ${breakpoint('tablet')`
+      text-align: left;
+    `}
   }
 
   img {
     height: 8vh;
+    ${breakpoint('tablet')`
+      height: auto;
+    `}
   }
 
   &:after {

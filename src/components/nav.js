@@ -1,16 +1,28 @@
 import React from 'react';
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 
 const NavList = styled.ul`
   padding: 0;
   margin: ${props => props.theme.spacing.base / 2}px 0 0;
+
+  ${breakpoint('tablet')`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  `};
 `
 
 const NavItem = styled.li`
   display: inline-block;
   margin-right: 10px;
   font-size: 22px;
+
+  ${breakpoint('tablet')`
+    margin-right: ${props => props.theme.spacing.base}px;
+  `};
 
   .active {
     color: ${props => props.theme.colors.main};

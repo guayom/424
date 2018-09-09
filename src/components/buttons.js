@@ -1,5 +1,6 @@
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
 const PrimaryButton = styled(Link)`
   padding: ${props => props.theme.spacing.base / 2}px ${props => props.theme.spacing.base}px;
@@ -10,6 +11,10 @@ const PrimaryButton = styled(Link)`
   color: #fff;
   text-align: center;
   margin: ${props => props.theme.spacing.base / 2}px 0;
+
+  ${breakpoint('tablet')`
+    display: inline-block;
+  `}
 
   &:hover {
   }
