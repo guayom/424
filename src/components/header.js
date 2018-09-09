@@ -14,6 +14,11 @@ const Container = styled.div`
   position: relative;
   z-index: 99;
   transition: background 1s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: ${props => props.scrolled ? "rgba(0,0,0,0.8)" : "transparent"};
   
   ${breakpoint('tablet')`
     display: grid;
@@ -22,11 +27,6 @@ const Container = styled.div`
     text-align: left;
     margin: 0 auto;
     padding: ${props => props.theme.spacing.base}px 10%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    background: ${props => props.scrolled ? "rgba(0,0,0,0.8)" : "transparent"};
   `}
 
   a {
@@ -59,10 +59,7 @@ const Container = styled.div`
     border-top: solid 1px;
     color: #fff;
     transition: opacity .5s;
-
-    ${breakpoint('tablet')`
-      opacity: ${props => props.scrolled ? "0" : "1"};
-    `}
+    opacity: ${props => props.scrolled ? "0" : "1"};
   }
 
   .scrolled {

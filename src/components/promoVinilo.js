@@ -7,9 +7,15 @@ import Img from 'gatsby-image';
 const Promo = styled.div`
   text-align: center;
   margin-bottom: ${props => props.theme.spacing.base}px;
-  height: 100vh;
+  height: calc(100vh - 50px);
   background: url(https://images.ctfassets.net/ivvukpavj6tb/1PSdZBBQFmUuE26uEiSWiw/f7b7139e3166808a054c1ab8bcdcd374/adventure-calm-clouds-414171.jpg?w=414&h=736&fit=fill)  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
   padding: ${props => props.theme.spacing.base}px;
+  padding-top: calc(110px + 8vh);
+  color: #fff;
 
   ${breakpoint('tablet')`
     display: grid;
@@ -20,11 +26,6 @@ const Promo = styled.div`
     padding: 0;
     padding-top: 122px;
     background: url(https://images.ctfassets.net/ivvukpavj6tb/1PSdZBBQFmUuE26uEiSWiw/f7b7139e3166808a054c1ab8bcdcd374/adventure-calm-clouds-414171.jpg)  no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;  
-    color: #fff;
   `}
 
   h2 {

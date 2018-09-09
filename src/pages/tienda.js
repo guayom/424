@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import Buy from '../components/buyButton';
+import {MainWrapper} from '../components/wrappers';
 
 const Product = styled.div`
   margin-bottom: ${props => props.theme.spacing.base}px;
@@ -27,7 +28,7 @@ const Tienda = ({data}) => {
   const Products = data.products.edges.map(p => p.node);
 
   return (
-    <div>
+    <MainWrapper>
       <ProductsGrid>
         {Products.map(product => (
           <Product key={product.id}>
@@ -55,7 +56,7 @@ const Tienda = ({data}) => {
           </Product>
         ))}
       </ProductsGrid>
-    </div>
+    </MainWrapper>
   )}
 
 export default Tienda

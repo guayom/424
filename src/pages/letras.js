@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import letra from '../templates/letra';
+import {MainWrapper} from '../components/wrappers';
 var slugify = require('slugify')
 
 const ImageContainer = styled.div`
@@ -15,7 +16,7 @@ const Tienda = ({ data }) => {
   const letras = data.letras.edges.map(p => p.node);
 
   return (
-    <div>
+    <MainWrapper>
       {albums.map(album => 
         <div key={album.id}>
           <ImageContainer>
@@ -33,7 +34,7 @@ const Tienda = ({ data }) => {
           </ol>
         </div>
       )}
-    </div>
+    </MainWrapper>
   )
 }
 
