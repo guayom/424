@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const NavList = styled.ul`
   padding: 0;
-  margin: ${props => props.theme.spacing.base / 2}px 0;
+  margin: ${props => props.theme.spacing.base / 2}px 0 0;
 `
 
 const NavItem = styled.li`

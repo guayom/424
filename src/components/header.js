@@ -7,8 +7,10 @@ import Nav from './nav'
 //import ReactSVG from 'react-svg';
 
 const Container = styled.div`
-  padding: ${props => props.theme.spacing.base}px;
+  padding: ${props => props.theme.spacing.base}px ${props => props.theme.spacing.base}px ${props => props.theme.spacing.base/2}px;
   height: auto;
+  text-align: center;
+  position: relative;
 
   a {
     color: ${props => props.theme.colors.white};
@@ -16,6 +18,18 @@ const Container = styled.div`
 
   h1, a, img {
     display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
+    width: 80%;
+    border-top: solid 1px;
+    color: #fff;
   }
 `
 
