@@ -22,6 +22,10 @@ const Container = styled.div`
     margin: 0 auto;
   }
 
+  img {
+    height: 8vh;
+  }
+
   &:after {
     content: "";
     position: absolute;
