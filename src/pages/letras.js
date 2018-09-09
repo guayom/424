@@ -3,6 +3,7 @@ import { ProductsGrid } from '../components/grids'
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import letra from '../templates/letra';
 var slugify = require('slugify')
 
 const ImageContainer = styled.div`
@@ -10,7 +11,8 @@ const ImageContainer = styled.div`
 `
 
 const Tienda = ({ data }) => {
-  const albums = data.albums.edges.map(p => p.node).filter(album => album.letras != null);
+  const albums = data.albums.edges.map(p => p.node).filter(a => a.letras != null);
+  const letras = data.letras.edges.map(p => p.node);
 
   return (
     <div>
@@ -21,8 +23,8 @@ const Tienda = ({ data }) => {
           </ImageContainer>
           <h3>{album.titulo}</h3>
           <ol>
-            {album.letras.sort((a,b) => (a.trackNumber - b.trackNumber)).map( track => 
-              <li>
+            {letras.filter(l => l.release.id === album.id).sort((a,b) => (a.trackNumber - b.trackNumber)).map( track => 
+              <li key={track.id}>
                 <Link to={`/letras/${slugify(album.titulo, {lower: true})}/${slugify(track.tema, {lower: true})}`}>
                   {track.trackNumber} - {track.tema}
                 </Link>
@@ -39,16 +41,32 @@ export default Tienda
 
 export const query = graphql`
   query LetrasQuery {
+    letras: allContentfulLetras {
+    edges {
+      node {
+        id
+        tema
+        trackNumber
+        letra {
+          childMarkdownRemark {
+            html
+          }
+        }
+        release {
+          id
+        }
+      }
+    }
+  }
     albums: allContentfulReleases {
       edges {
         node {
-          titulo
-          release
+          id
           letras{
             id
-            tema
-            trackNumber
           }
+          titulo
+          release
           cover {
             sizes {
               src
