@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Logo from '../images/logo.svg'
 import Nav from './nav'
+import { timingSafeEqual } from 'crypto';
 //import ReactSVG from 'react-svg';
 
 const Container = styled.div`
@@ -12,6 +13,7 @@ const Container = styled.div`
   text-align: center;
   position: relative;
   z-index: 99;
+  transition: background 1s;
   
   ${breakpoint('tablet')`
     display: grid;
@@ -24,6 +26,7 @@ const Container = styled.div`
     top: 0;
     right: 0;
     left: 0;
+    background: ${props => props.scrolled ? "rgba(0,0,0,0.8)" : "transparent"};
   `}
 
   a {
@@ -55,25 +58,67 @@ const Container = styled.div`
     width: 80%;
     border-top: solid 1px;
     color: #fff;
+    transition: opacity .5s;
+    opacity: ${props => props.scrolled ? "0" : "1"};
+  }
+
+  .scrolled {
+    background: purple;
   }
 `
 
-const Header = ({ siteTitle }) => (
-  <Container>
-    <h1 style={{ margin: 0 }}>
-      <Link to="/">
-        {/* <ReactSVG
-          src={Logo}
-          className="logo"
-          svgStyle={{ width: 200, height: 100 }}
-          evalScripts="always"
-          renumerateIRIElements={false}
-        /> */}
-        <img src={Logo} alt="424" />
-      </Link>
-    </h1>
-    <Nav/>
-  </Container>
-)
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrolled: false
+    }
+
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll(e) {
+    const offset = e.target.body.childNodes[0].getBoundingClientRect().top;
+
+    if (offset == 0) {
+      this.setState({ scrolled: false });
+    } else {
+      this.setState({ scrolled: true });
+    }
+    
+  }
+
+  render() {
+    return (
+      <Container 
+        scrolled={this.state.scrolled}
+        innerRef={e => this.container = e}
+        >
+        <h1 style={{ margin: 0 }}>
+          <Link to="/">
+            {/* <ReactSVG
+            src={Logo}
+            className="logo"
+            svgStyle={{ width: 200, height: 100 }}
+            evalScripts="always"
+            renumerateIRIElements={false}
+          /> */}
+            <img src={Logo} alt="424" />
+          </Link>
+        </h1>
+        <Nav />
+      </Container>
+    )
+  }
+}
 
 export default Header
