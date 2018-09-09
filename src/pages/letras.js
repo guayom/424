@@ -23,7 +23,7 @@ const Tienda = ({ data }) => {
           <ol>
             {album.letras.sort((a,b) => (a.trackNumber - b.trackNumber)).map( track => 
               <li>
-                <Link to={`${slugify(album.titulo, {lower: true})}/${slugify(track.tema, {lower: true})}`}>
+                <Link to={`/letras/${slugify(album.titulo, {lower: true})}/${slugify(track.tema, {lower: true})}`}>
                   {track.trackNumber} - {track.tema}
                 </Link>
               </li>
