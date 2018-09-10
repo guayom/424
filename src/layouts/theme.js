@@ -45,6 +45,7 @@ injectGlobal`
   }
   body, p, ol, ul {
     font-family: ${Theme.fonts.main};
+    font-size: 14px;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: ${Theme.fonts.main};
