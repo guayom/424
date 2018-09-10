@@ -8,7 +8,7 @@ export default ({ data }) => {
   return (
     <div>
       <h1>{track.tema}</h1>
-      <div dangerouslySetInnerHTML={{ __html: track.letra.childMarkdownRemark.html }} />
+      <div style={{ whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{ __html: track.letra.childMarkdownRemark.rawMarkdownBody }} />
     </div>
   )
 }
@@ -19,8 +19,10 @@ export const lyricQuery = graphql`
       id
       tema
       letra {
+        letra
         childMarkdownRemark {
           html
+          rawMarkdownBody
         }
       }
     }
