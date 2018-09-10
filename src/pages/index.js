@@ -4,8 +4,7 @@ import {SecondaryButton} from '../components/buttons';
 
 const Index = ({data}) => {
   return (
-    <div>
-      <SecondaryButton to="/tienda">Ver más productos</SecondaryButton>
+    <div style={{maxWidth: "500px", margin: "0 auto", marginTop: "-150px" }}>
       <Spotify />
     </div>
   )

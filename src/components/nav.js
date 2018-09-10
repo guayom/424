@@ -18,7 +18,6 @@ const NavList = styled.ul`
 const NavItem = styled.li`
   display: inline-block;
   margin-right: 10px;
-  font-size: 22px;
 
   ${breakpoint('tablet')`
     margin-right: ${props => props.theme.spacing.base}px;

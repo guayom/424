@@ -8,17 +8,19 @@ import { timingSafeEqual } from 'crypto';
 //import ReactSVG from 'react-svg';
 
 const Container = styled.div`
-  padding: ${props => props.theme.spacing.base}px ${props => props.theme.spacing.base}px ${props => props.theme.spacing.base/2}px;
+  padding: ${props => props.scrolled ? `${props.theme.spacing.base / 2}px` : `${props.theme.spacing.base}px`};
+  padding-bottom: ${props => props.theme.spacing.base/2}px;
   height: auto;
   text-align: center;
   position: relative;
   z-index: 99;
-  transition: background 1s;
+  transition: background 1s, padding .5s, font-size .5s;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   background: ${props => props.scrolled ? "rgba(0,0,0,0.8)" : "transparent"};
+  font-size: ${props => props.scrolled ? '16px' : '22px'};
   
   ${breakpoint('tablet')`
     display: grid;
@@ -44,7 +46,8 @@ const Container = styled.div`
   }
 
   img {
-    height: 8vh;
+    transition: height .5s ease;
+    height: ${props => props.scrolled ? "20px" : "8vh"};
     ${breakpoint('tablet')`
       height: auto;
     `}
@@ -65,10 +68,6 @@ const Container = styled.div`
       width: 80%;
       left: 10%;
     `}
-  }
-
-  .scrolled {
-    background: purple;
   }
 `
 
