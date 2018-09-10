@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Buy from '../components/buyButton';
 import Img from 'gatsby-image';
+import Link from 'gatsby-link';
 
 const Promo = styled.div`
   text-align: center;
@@ -38,7 +39,7 @@ const Promo = styled.div`
 `
 
 const ImageContainer = styled.div`
-  max-width: 80%;
+  max-width: 65%;
   margin: 0 auto;
   z-index: 1;
 
@@ -101,7 +102,9 @@ export default ({product}) =>
     <Album>
       <div>
         <ImageContainer>
-          <Img sizes={product.cover.sizes} alt={product.title} />
+          <Link to={`/tienda/${product.slug}`}>
+            <Img sizes={product.cover.sizes} alt={product.title} />
+          </Link>
         </ImageContainer>
       </div>
     </Album>
