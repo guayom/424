@@ -53,6 +53,15 @@ module.exports = {
       trackingId: "UA-59794852-1",
       head: false,
     }
-  }
+  },
+  {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat`,
+          `Montserrat\:300,400,700` // you can also specify font weights and styles
+        ]
+      }
+    }
   ],
 }

@@ -9,6 +9,9 @@ const Theme = {
     white: "#fff",
     main: "#000",
   },
+  fonts: {
+    main: "'Montserrat', sans-serif",
+  },
   sizes: {
     header: 50,
     social: 50,
@@ -41,10 +44,10 @@ injectGlobal`
     font-weight: normal;
   }
   body, p, ol, ul {
-    font-family: Source Serif Pro;
+    font-family: ${Theme.fonts.main};
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: Open Sans;
+    font-family: ${Theme.fonts.main};
   }
   ol, ul {
     list-style: none;
