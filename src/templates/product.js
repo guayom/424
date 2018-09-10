@@ -5,15 +5,23 @@ import breakpoint from 'styled-components-breakpoint';
 import Buy from '../components/buyButton';
 
 const ProductDetailGrid = styled.div`
+  ${breakpoint ('tablet')`
+    display: grid;
+    grid-gap: ${props => props.theme.spacing.base}px;
+    grid-template-areas: "l r" "b b";
+  `}
 `
 
 const ImageContainer = styled.div`
+  grid-area: l;
 `
 
 const Details = styled.div`
+  grid-area: r;
 `
 
 const Description = styled.div`
+  grid-area: b;
 `
 
 export default ({data}) => {

@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import DefaultTheme from '../layouts/theme';
 import { MainGrid } from '../components/grids';
-
+import { MainWrapper } from '../components/wrappers';
 import Header from '../components/header'
 import Social from '../components/social'
+import PromoVinilo from '../components/promoVinilo';
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children, data, location }) => (
   
   <div>
     <Helmet
@@ -20,7 +21,10 @@ const Layout = ({ children, data }) => (
     <DefaultTheme>
       <MainGrid>
         <Header siteTitle={data.site.siteMetadata.title} />
-        {children()}
+        {location.pathname == "/" ? <PromoVinilo product={data.product} /> : null}
+        <MainWrapper>
+          {children()}
+        </MainWrapper>
         <Social networks={data.allContentfulRedes.edges.map(r => r.node)} />
       </MainGrid>
     </DefaultTheme>
@@ -48,6 +52,29 @@ export const query = graphql`
           url
           icon
         }
+      }
+    }
+    product: contentfulProducto(id: {eq: "c5BtAigd53qcU2OKyQwcsaW"}){
+      id
+      title
+      price
+      slug
+      cover {
+        file {
+          url
+        }
+        sizes {
+          src
+          base64
+          tracedSVG
+          srcSet
+          srcSetWebp
+          sizes
+          aspectRatio
+        }
+      }
+      description{
+        description
       }
     }
   }

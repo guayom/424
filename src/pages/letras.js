@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import Link from 'gatsby-link';
 import letra from '../templates/letra';
-import {MainWrapper} from '../components/wrappers';
 var slugify = require('slugify')
 
 const ImageContainer = styled.div`
@@ -48,7 +47,7 @@ const Tienda = ({ data }) => {
   const letras = data.letras.edges.map(p => p.node);
 
   return (
-    <MainWrapper>
+    <div>
       {albums.map(album => 
         <Album key={album.id}>
           <ImageContainer>
@@ -68,7 +67,7 @@ const Tienda = ({ data }) => {
           </div>
         </Album>
       )}
-    </MainWrapper>
+    </div>
   )
 }
 
