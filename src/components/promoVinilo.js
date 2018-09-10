@@ -52,8 +52,10 @@ const Price = styled.p`
   font-size: 22px;
   font-weight: 700;
   z-index: 2;
+  display: none;
 
   ${breakpoint('tablet')`
+    display: block;
     font-size: 50px;
   `}
 `
